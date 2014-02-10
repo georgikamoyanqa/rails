@@ -32,7 +32,8 @@ module ActionController
 
     def initialize(params) # :nodoc:
       @params = params
-      super("found unpermitted parameters: #{params.join(", ")}")
+      parameter = 'parameter'.pluralize(params.size)
+      super("found unpermitted #{parameter}: #{params.join(", ")}")
     end
   end
 

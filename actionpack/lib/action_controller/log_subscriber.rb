@@ -50,7 +50,8 @@ module ActionController
 
     def unpermitted_parameters(event)
       unpermitted_keys = event.payload[:keys]
-      debug("Unpermitted parameters: #{unpermitted_keys.join(", ")}")
+      parameter = 'parameter'.pluralize(unpermitted_keys.size)
+      debug("Unpermitted #{parameter}: #{unpermitted_keys.join(", ")}")
     end
 
     def deep_munge(event)
